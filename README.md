@@ -6,21 +6,21 @@ A Vim wrapper for running tests on different granularities.
 
 Currently the following testing frameworks are supported:
 
-| Language       | Frameworks                                 | Identifiers                                  |
-| :------------: | -------------------------------------      | -------------------------------------------- |
-| **Ruby**       | RSpec, [Minitest][minitest], [M], Cucumber | `rspec`, `minitest`, `m`, `cucumber`         |
-| **JavaScript** | Intern, TAP, Karma, Mocha, Jasmine         | `intern`, `tap`, `karma`, `mocha`, `jasmine` |
-| **Python**     | Nose, PyTest, Django                       | `nose`, `pytest`, `djangotest`, `djangonose` |
-| **Elixir**     | ExUnit, ESpec                              | `exunit`, `espec`                            |
-| **Go**         | Go                                         | `gotest`                                     |
-| **Rust**       | Cargo                                      | `cargotest`                                  |
-| **Clojure**    | Fireplace.vim                              | `fireplacetest`                              |
-| **Shell**      | Bats                                       | `bats`                                       |
-| **VimScript**  | VSpec, Vader.vim                           | `vspec`, `vader`                             |
-| **Lua**        | Busted                                     | `busted`                                     |
-| **PHP**        | PHPUnit, Behat, PHPSpec, Codeception       | `phpunit`, `behat`, `phpspec`, `codeception` |
-| **Perl**       | Prove                                      | `prove`                                      |
-| **Java**       | Maven                                      | `maventest`                                  |
+| Language       | Frameworks                                      | Identifiers                                  |
+| :------------: | -------------------------------------           | -------------------------------------------- |
+| **Ruby**       | RSpec, [Minitest][minitest]/Rails/[M], Cucumber | `rspec`, `minitest`/`rails`/`m`, `cucumber`  |
+| **JavaScript** | Intern, TAP, Karma, Mocha, Jasmine              | `intern`, `tap`, `karma`, `mocha`, `jasmine` |
+| **Python**     | Nose, PyTest, Django                            | `nose`, `pytest`, `djangotest`, `djangonose` |
+| **Elixir**     | ExUnit, ESpec                                   | `exunit`, `espec`                            |
+| **Go**         | Go                                              | `gotest`                                     |
+| **Rust**       | Cargo                                           | `cargotest`                                  |
+| **Clojure**    | Fireplace.vim                                   | `fireplacetest`                              |
+| **Shell**      | Bats                                            | `bats`                                       |
+| **VimScript**  | VSpec, Vader.vim                                | `vspec`, `vader`                             |
+| **Lua**        | Busted                                          | `busted`                                     |
+| **PHP**        | PHPUnit, Behat, PHPSpec, Codeception            | `phpunit`, `behat`, `phpspec`, `codeception` |
+| **Perl**       | Prove                                           | `prove`                                      |
+| **Java**       | Maven                                           | `maventest`                                  |
 
 ## Features
 
@@ -261,17 +261,6 @@ can turn it off:
 
 ```vim
 let test#ruby#bundle_exec = 0
-```
-
-#### PHP
-
-Codeception can run PHPUnit tests, in fact it is build on top of the PHPUnit.
-Test.vim has no way of detecting which one did you intend to use. By default
-the first available will be chosen, but you can force a specific one:
-
-``` vim
-let test#php#runner = 'codeception'
-" Runners available are 'phpunit', 'codeception'
 ```
 
 ## Extending

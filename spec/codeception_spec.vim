@@ -3,7 +3,6 @@ source spec/support/helpers.vim
 describe "Codeception"
 
   before
-    let g:test#php#runner = 'codeception'
     cd spec/fixtures/codeception
   end
 
@@ -41,14 +40,15 @@ describe "Codeception"
   end
 
   it "runs cest nearest tests"
-    view +1 tests/functional/NormalCest.php
+    view +21 tests/functional/NormalCest.php
     TestNearest
 
-    Expect g:test#last_command == 'codecept run tests/functional/NormalCest.php'
+    Expect g:test#last_command ==
+          \ 'codecept run tests/functional/NormalCest.php:tryToTestSomethingElse'
   end
 
   it "runs cept nearest tests"
-    view +1 tests/functional/NormalCept.php
+    view +3 tests/functional/NormalCept.php
     TestNearest
 
     Expect g:test#last_command == 'codecept run tests/functional/NormalCept.php'
@@ -62,10 +62,11 @@ describe "Codeception"
   end
 
   it "runs nearest unit tests"
-    view +1 tests/functional/NormalTest.php
+    view +23 tests/functional/NormalTest.php
     TestNearest
 
-    Expect g:test#last_command == 'codecept run tests/functional/NormalTest.php'
+    Expect g:test#last_command ==
+          \ 'codecept run tests/functional/NormalTest.php:testMe'
   end
 
   it "runs test suites"
